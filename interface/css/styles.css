@@ -4,10 +4,6 @@
 		
 		@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500|Montserrat:300,400,700|Oswald:400,500');
 
-		/*font-family: 'Oswald', sans-serif;
-		font-family: 'Montserrat', sans-serif;
-		font-family: 'Fira Sans', sans-serif;*/
-
 		body {
 			background: #ffffff;
 			font-size: 16px;
@@ -89,6 +85,7 @@
 		}
   
 	
+
 /**************************
 	GLOBALS
 ***************************/
@@ -131,10 +128,6 @@
 		color: #353c5c;
 	}
 
-	.trackmysolo-form {
-		
-	}
-
 	.trackmysolo-form label {
 		font-family: 'Montserrat', sans-serif !important;
 		text-transform: uppercase;
@@ -172,8 +165,10 @@
 
 	.trackmysolo-tooltip {
 		position: absolute;
-		left: -28px;
 		top: -55px;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
 		padding: 12px 15px;
 		font-size: 12px;
 		color: #14182a;
@@ -181,8 +176,8 @@
 		border-radius: 5px;
 		white-space: nowrap;
 		display: none;
+		z-index: 2;
 	}
-
 
 	.trackmysolo-tooltip::after {
 		content: "";
@@ -193,7 +188,8 @@
 		border-bottom-left-radius: 10px;
 		position: absolute;
 		bottom: -3px;
-		left: 25px;
+		left: 50%;
+		margin-left: -5px;
 	}
 
 		
@@ -1188,10 +1184,6 @@
 /**************************
 	OPTIN TRACKING
 ***************************/
-	
-	.optintracking-section {
-
-	}
 
 	.optintracking-information {
 		background-color: #ffffff;
@@ -1443,7 +1435,6 @@
 
 	.statistics-clicks-active-head-today {
 		font-size: 10px;
-		font-weight: lighter;
 		color: #13183a;
 		text-transform: uppercase;
 		letter-spacing: 1px;
@@ -1512,6 +1503,9 @@
 
 	.statistics-clicks-active-graph-center {
 		height: 120px;
+		width: calc(100% - 20px);
+		margin-left: 20px;
+		position: relative;
 	}
 
 	.statistics-clicks-active-graph-center::after {
@@ -1564,6 +1558,7 @@
 	.scagc-bar span {
 		position: absolute;
 		bottom: -30px;
+		left: -3px;
 		color: #6370bc;
 		font-size: 9px;
 		font-weight: lighter;
@@ -1573,7 +1568,24 @@
 		position: absolute;
 		left: 0;
 		top: 0;
-		bottom: 0;
+		bottom: 17px;
+	}
+
+	.statistics-clicks-active-graph-side span {
+		color: #ffffff;
+		font-size: 11px;
+		font-weight: lighter;
+	}
+
+	.scagc-bar .trackmysolo-tooltip {
+		left: -28px;
+		-webkit-transform: none;
+		transform: none;
+	}
+
+	.scagc-bar .trackmysolo-tooltip::after {
+		left: 25px;
+		margin-left: 0;
 	}
 
 	.scagc-bar:hover .trackmysolo-tooltip {
@@ -1582,28 +1594,267 @@
 
 	.trackmysolo-tooltip strong {
 		color: #45d197;
-		padding-right: 6px;
 		font-weight: 500;
+		padding-right: 3px;
+	}
+	
+	.statistics-clicks-total {
+		background: #1d233d;
+		background: -webkit-linear-gradient(right top, #303a6a 2%, #1d233d 60%, #181d33 100%);
+		background: -o-linear-gradient(bottom left, #303a6a 2%, #1d233d 60%, #181d33 100%);
+		background: -moz-linear-gradient(bottom left, #303a6a 2%, #1d233d 60%, #181d33 100%);
+		background: linear-gradient(to bottom left, #303a6a 2%, #1d233d 60%, #181d33 100%);
+		padding: 25px !important;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
 	}
 
+	.statistics-clicks-total-item {
+		margin: 10px 0;
+	}
+
+	.statistics-clicks-total-item:first-of-type {
+		margin-bottom: 30px;
+	}
+
+	.statistics-clicks-total-item strong {
+		display: block;
+		font-size: 37px;
+		color: #45d197;
+	}
+
+	.statistics-clicks-total-item strong img {
+		margin-bottom: 7px;
+	}
+
+	.statistics-clicks-total-item span {
+		display: block;
+		font-size: 9px;
+		color: #545ba4;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.statistics-banner {
+		margin-bottom: 40px;
+	}
 	
+	.statistics-information h2 {
+		color: #2e365a;
+		font-size: 16px;
+		font-weight: bold;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
 
+	.statistics-information-countries {
+		background-color: #ffffff;
+		border-radius: 5px;
+		padding: 25px 30px;
+	}
 
+	.statistics-information-countries h2 {
+		margin-bottom: 20px;
+	}
 
+	.statistics-information-browsers h2 {
+		margin: 5px 0 20px;
+	}
 
+	.statistics-information-browsers-list {
+		position: relative;
+		margin-bottom: 25px;
+	}
 
+	.statistics-information-browsers-list::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 21%;
+		background-color: #d6dcf2;
+		width: 1px;
+	}
 
+	.statistics-information-browsers-list > div {
+		margin-bottom: 7px;
+	}
 
+	.statistics-information-browsers-list > div:last-of-type,
+	.statistics-information-browsers-list > div:nth-last-of-type(2) {
+		margin-bottom: 0;
+	}
 
+	.statistics-information-browsers-title {
+		font-size: 12px;
+		color: #565f80;
+		font-weight: lighter;
+		padding-right: 20px !important;
+	}
 
+	.statistics-information-browsers-bar-wrapper {
+		width: calc(100% - 25px);
+	}
 
+	.statistics-information-browsers-bar {
+		height: 7px;
+		border-radius: 3px;
+		background-color: #45d197;
+		position: relative;
+	}
 
+	.statistics-information-browsers-bar-zero {
+		background-color: #e0e3f1;
+		width: 7px !important;
+	}
 
+	.statistics-information-browsers-bar-number {
+		position: absolute;
+		top: -3px;
+		left: calc(100% + 5px);
+		color: #9ca6d2;
+		font-size: 11px;
+		font-weight: lighter;
+	}
 
+	.statistics-information-browsers-bar .trackmysolo-tooltip {
+		top: -50px;
+	}
 
+	.statistics-information-browsers-bar:hover .trackmysolo-tooltip {
+		display: block;
+	}
 
+	.statistics-information-browsers-summary-titles {
+		text-transform: uppercase;
+	}
 
+	.statistics-information-browsers-summary-titles strong {
+		font-size: 10px;
+	}
 
+	.statistics-information-browsers-summary-titles span {
+		font-size: 9px;
+	}
+	
+	.sibst-first {
+		color: #45d197;
+	}
+
+	.sibst-last {
+		color: #202644;
+	}
+
+	.statistics-information-browsers-summary-bars {
+		background-color: #e1e5f1;
+		padding: 5px;
+		border-radius: 5px;
+	}
+
+	.sibsb-first,
+	.sibsb-last {
+		display: inline-block;
+		border-radius: 3px;
+		line-height: 0;
+		vertical-align: middle;
+		height: 6px;
+		float: left;
+	}
+
+	.sibsb-first {
+		background-color: #45d197;
+		margin-right: 7px;
+	}
+
+	.sibsb-last {
+		background-color: #202644;
+	}
+
+	.statistics-information-referrers h2 {
+		margin: 5px 0 20px;
+	}
+
+	.statistics-information-platforms {
+		margin-top: 50px;
+	}
+
+	.statistics-information-platforms .progress {
+		overflow: visible;
+		border-radius: 5px;
+	}
+
+	.statistics-information-platforms .progress-bar {
+		font-size: 10px;
+		font-weight: bold;
+		position: relative;
+		text-align: left;
+		padding: 4px 0 0 7px;
+		height: 22px;
+	}
+
+	.statistics-information-platforms .progress-bar:first-of-type {
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
+
+	.statistics-information-platforms .progress-bar:last-of-type {
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+
+	.statistics-information-platforms .progress-bar span.statistics-information-platforms-name {
+		font-size: 8px;
+		font-weight: bold;
+		text-transform: uppercase;
+		position: absolute;
+		top: -18px;
+		left: 6px;
+	}
+
+	.trackmysolo-color-1 {
+		background-color: #45d197;
+		color: #268e63;
+	}
+
+	.trackmysolo-color-2 {
+		background-color: #998fda;
+		color: #595096;
+	}
+
+	.trackmysolo-color-3 {
+		background-color: #6a7acd;
+		color: #343e6e;
+	}
+
+	.trackmysolo-color-4 {
+		background-color: #f6a47f;
+		color: #b66e4d;
+	}
+
+	.trackmysolo-color-5 {
+		background-color: #ffef97;
+		color: #ddc437;
+	}
+
+	.trackmysolo-color-1 span {
+		color: #268e63;
+	}
+
+	.trackmysolo-color-2 span {
+		color: #5d558f;
+	}
+
+	.trackmysolo-color-3 span {
+		color: #3e4a7f;
+	}
+
+	.trackmysolo-color-4 span {
+		color: #d7845f;
+	}
+
+	.trackmysolo-color-5 span {
+		color: #d8c03d;
+	}
 
 
 
@@ -1636,7 +1887,6 @@
 				margin-bottom: 50px;
 			}
 		}
-
 
 	/* MEDIA QUERIES - 992px */
 
@@ -1779,6 +2029,53 @@
 		  .optintracking-trackingcode-code textarea {
 				text-align: center;
 		  }
+
+		  /* STATISTICS */
+		  .statistics-general-url {
+   			padding-right: 15px !important;
+    		border-top-right-radius: 5px;
+				border-bottom-left-radius: 0;
+		  }
+		  .statistics-general-url strong {
+		  	padding-left: 15px;
+		  }
+		  a.statistics-general-back:link,
+		  a.statistics-general-back:visited {
+				border-bottom-left-radius: 0;
+				padding: 15px 18px;
+		  }
+		  .statistics-general-file {
+   			padding-right: 15px !important;
+		  }
+		  .statistics-general-file strong {
+		  	padding: 15px 5px 15px 20px;
+		  }
+		  .statistics-clicks-active {
+		  	border-top-right-radius: 5px;
+		  	border-bottom-left-radius: 0;
+		  }
+		  .statistics-clicks-total {
+		  	border-top-right-radius: 0;
+		  	border-bottom-left-radius: 5px;
+		  	padding: 15px !important;
+		  }
+		  .statistics-clicks-total-item:first-of-type {
+		  	margin-bottom: 15px;
+		  }
+		  .statistics-information-countries,
+		  .statistics-information-browsers,
+		  .statistics-information-referrers {
+		  	margin-bottom: 20px;
+		  }
+		  .statistics-information-platforms {
+				margin-top: 20px;
+		  }
+		  .statistics-information h2 {
+		  	margin-bottom: 30px;
+		  }
+		  .statistics-information-browsers-list::after {
+		  	left: 22.5%;
+		  }
 		}
 
 	/* MEDIA QUERIES - 576px */
@@ -1855,6 +2152,9 @@
 			}
 
 			/* LOGIN */
+			.signinup {
+				padding: 0 15px;
+			}
 			.signinup-links,
 			.signinup-links .text-right {
 				text-align: center !important;
@@ -1890,7 +2190,35 @@
 				padding: 35px 15px;
 			}
 
-
+		  /* STATISTICS */
+		  .statistics-clicks-active-head,
+		  .statistics-clicks-active-head .text-right {
+		  	text-align: center !important;
+		  }
+		  .statistics-clicks-active-head-today {
+		  	margin: 5px 0;
+		  }
+			.scagc-places span:nth-of-type(2n),
+			.scagc-bar:nth-of-type(2n) {
+				display: none;
+			}
+			.statistics-information-countries,
+			.statistics-information-browsers,
+			.statistics-information-referrers,
+			.statistics-information-platforms {
+				text-align: center;
+			}
+			.statistics-information-browsers-list::after {
+				display: none;
+			}
+			.statistics-information-browsers-title {
+				padding-right: 0 !important;
+				text-align: center !important;
+			}
+			.statistics-information-browsers-bar {
+				margin: 0 auto 10px;
+				text-align: center;
+			}
 		}
 
 	/* MEDIA QUERIES - 480px */
@@ -1932,5 +2260,11 @@
 			}
 			.homepage-testimonials-carousel-item-head p {
 				font-size: 15px;
+			}
+
+			/* STATISTICS */
+			.scagc-places span:nth-of-type(3n),
+			.scagc-bar:nth-of-type(3n) {
+				display: none;
 			}
 		}
